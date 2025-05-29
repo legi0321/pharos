@@ -40,12 +40,11 @@ const networkConfig = {
   rpcUrl: 'https://testnet.dplabs-internal.com',
   currencySymbol: 'PHRS',
 };
-
+const LP_ADDRESS = "0xF8a1D4FF0f9b9Af7CE58E1fc1833688F3BFd6115";
 const tokens = {
   USDC: '0xad902cf99c2de2f1ba5ec4d642fd7e49cae9ee37',
   WPHRS: '0x76aaada469d23216be5f7c596fa25f282ff9b364',
   USDT: '0xed59de2d7ad9c043442e381231ee3646fc3c2939',
-  LP_ADDRESS = "0xF8a1D4FF0f9b9Af7CE58E1fc1833688F3BFd6115";
   POSITION_MANAGER: '0xF8a1D4FF0f9b9Af7CE58E1fc1833688F3BFd6115',
 };
 
