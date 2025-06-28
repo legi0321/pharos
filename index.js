@@ -6,25 +6,27 @@ const randomUseragent = require('random-useragent');
 const axios = require('axios');
 const prompt = require('prompt-sync')({ sigint: true });
 
+// Terminal color codes
 const colors = {
-  reset: '\x1b[0m',
-  cyan: '\x1b[36m',
-  green: '\x1b[32m',
+  reset:  '\x1b[0m',
+  cyan:   '\x1b[36m',
+  green:  '\x1b[32m',
   yellow: '\x1b[33m',
-  red: '\x1b[31m',
-  white: '\x1b[37m',
-  bold: '\x1b[1m',
+  red:    '\x1b[31m',
+  white:  '\x1b[37m',
+  bold:   '\x1b[1m',
 };
 
+// Custom logger with formatting
 const logger = {
-  info: (msg) => console.log(`${colors.green}[✓] ${msg}${colors.reset}`),
-  wallet: (msg) => console.log(`${colors.yellow}[➤] ${msg}${colors.reset}`),
-  warn: (msg) => console.log(`${colors.yellow}[!] ${msg}${colors.reset}`),
-  error: (msg) => console.log(`${colors.red}[✗] ${msg}${colors.reset}`),
+  info:    (msg) => console.log(`${colors.green}[✓] ${msg}${colors.reset}`),
+  wallet:  (msg) => console.log(`${colors.yellow}[➤] ${msg}${colors.reset}`),
+  warn:    (msg) => console.log(`${colors.yellow}[!] ${msg}${colors.reset}`),
+  error:   (msg) => console.log(`${colors.red}[✗] ${msg}${colors.reset}`),
   success: (msg) => console.log(`${colors.green}[+] ${msg}${colors.reset}`),
   loading: (msg) => console.log(`${colors.cyan}[⟳] ${msg}${colors.reset}`),
-  step: (msg) => console.log(`${colors.white}[➤] ${msg}${colors.reset}`),
-  user: (msg) => console.log(`\n${colors.white}[➤] ${msg}${colors.reset}`),
+  step:    (msg) => console.log(`${colors.white}[➤] ${msg}${colors.reset}`),
+  user:    (msg) => console.log(`\n${colors.white}[➤] ${msg}${colors.reset}`),
   banner: () => {
     console.log(`${colors.cyan}${colors.bold}`);
     console.log('-------------------------------------------------');
@@ -34,32 +36,39 @@ const logger = {
   },
 };
 
+// Network configuration
 const networkConfig = {
-  name: 'Pharos Testnet',
-  chainId: 688688,
-  rpcUrl: 'https://testnet.dplabs-internal.com',
-  currencySymbol: 'PHRS',
+  name:            'Pharos Testnet',
+  chainId:         688688,
+  rpcUrl:          'https://testnet.dplabs-internal.com',
+  currencySymbol:  'PHRS',
 };
-const LP_ADDRESS = "0xF8a1D4FF0f9b9Af7CE58E1fc1833688F3BFd6115";
+
+// Contract addresses
+const LP_ADDRESS       = '0xF8a1D4FF0f9b9Af7CE58E1fc1833688F3BFd6115';
+const contractAddress  = '0x1a4de519154ae51200b0ad7c90f7fac75547888a';
+
+// Token addresses
 const tokens = {
-  USDC: '0xad902cf99c2de2f1ba5ec4d642fd7e49cae9ee37',
-  WPHRS: '0x76aaada469d23216be5f7c596fa25f282ff9b364',
-  USDT: '0xed59de2d7ad9c043442e381231ee3646fc3c2939',
+  USDC:             '0xad902cf99c2de2f1ba5ec4d642fd7e49cae9ee37',
+  WPHRS:            '0x76aaada469d23216be5f7c596fa25f282ff9b364',
+  USDT:             '0xed59de2d7ad9c043442e381231ee3646fc3c2939',
   POSITION_MANAGER: '0xF8a1D4FF0f9b9Af7CE58E1fc1833688F3BFd6115',
 };
 
+// Pool addresses
 const poolAddresses = {
   USDC_WPHRS: '0x0373a059321219745aee4fad8a942cf088be3d0e',
   USDT_WPHRS: '0x70118b6eec45329e0534d849bc3e588bb6752527',
 };
 
-const contractAddress = '0x1a4de519154ae51200b0ad7c90f7fac75547888a';
-
+// Token decimals
 const tokenDecimals = {
   WPHRS: 18,
-  USDC: 6,
-  USDT: 6,
+  USDC:   6,
+  USDT:   6,
 };
+
 
 const contractAbi = [
   {
