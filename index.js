@@ -45,6 +45,7 @@ const networkConfig = {
 };
 
 // Contract addresses
+const LP_ADDRESS       = '0xF8a1D4FF0f9b9Af7CE58E1fc1833688F3BFd6115';
 const contractAddress  = '0x1a4de519154ae51200b0ad7c90f7fac75547888a';
 
 // Token addresses
@@ -800,10 +801,10 @@ const main = async () => {
     return;
   }
 
-  const numTransfers = 10;
-  const numWraps = 10;
-  const numSwaps = 10;
-  const numLPs = 10;
+  const numTransfers = 91;
+  const numWraps = 91;
+  const numSwaps = 91;
+  const numLPs = 91;
 
   while (true) {
     for (const privateKey of privateKeys) {
