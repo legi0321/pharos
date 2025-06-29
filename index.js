@@ -801,10 +801,10 @@ const main = async () => {
     return;
   }
 
-  const numTransfers = 20;
+  const numTransfers = 15;
   const numWraps = 20;
   const numSwaps = 20;
-  const numLPs = 20;
+  const numLPs = 15;
 
   while (true) {
     for (const privateKey of privateKeys) {
