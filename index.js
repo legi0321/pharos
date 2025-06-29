@@ -1,3 +1,4 @@
+
 require('dotenv').config();
 const { ethers } = require('ethers');
 const fs = require('fs');
@@ -40,7 +41,7 @@ const logger = {
 const networkConfig = {
   name:            'Pharos Testnet',
   chainId:         688688,
-  rpcUrl:          'https://testnet.dplabs-internal.com',
+  rpcUrl:          'https://api.zan.top/node/v1/pharos/testnet/1311fbe804cc47e4a02e66a76d9c5d7b',
   currencySymbol:  'PHRS',
 };
 
@@ -800,10 +801,10 @@ const main = async () => {
     return;
   }
 
-  const numTransfers = 91;
-  const numWraps = 91;
-  const numSwaps = 91;
-  const numLPs = 91;
+  const numTransfers = 20;
+  const numWraps = 20;
+  const numSwaps = 20;
+  const numLPs = 20;
 
   while (true) {
     for (const privateKey of privateKeys) {
