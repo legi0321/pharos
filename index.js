@@ -801,9 +801,9 @@ const main = async () => {
     return;
   }
 
-  const numTransfers = 15;
-  const numWraps = 20;
-  const numSwaps = 20;
+  const numTransfers = 20;
+  const numWraps = 25;
+  const numSwaps = 25;
   const numLPs = 15;
 
   while (true) {
